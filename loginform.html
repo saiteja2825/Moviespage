@@ -4,101 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login Page</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+<style>
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      overflow: hidden;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+    background: url('watchingmovieimg.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
 
-    #start-screen {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #111;
-    }
+  #start-screen {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+  }
 
-    #start-screen button {
-      padding: 15px 30px;
-      font-size: 20px;
-      border: none;
-      border-radius: 10px;
-      background: cyan;
-      color: black;
-      cursor: pointer;
-      font-weight: bold;
-    }
+ 
 
-    #login-container {
-      display: none;
-      height: 100vh;
-      background: #111;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  #login-container {
+    display: none;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .login-box {
-      background: rgba(0,0,0,0.7);
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px cyan;
-      animation: fadeIn 1s ease forwards;
-      opacity: 0;
+  @keyframes spin{
+    0%{
+      left
     }
+  }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+  .login-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 cyan;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
 
-    .login-box h2 {
-      margin-bottom: 20px;
-      text-align: center;
-    }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
 
-    .login-box input {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+  .login-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-    .login-box button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      background: cyan;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+  .login-box input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
 
-    .login-box button:hover {
-      background: #00eaff;
-    }
-  </style>
+  .login-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: cyan;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .login-box button:hover {
+    background: #00eaff;
+  }
+</style>
+
 </head>
 <body>
 
   <!-- Start Button -->
-  <div id="start-screen">
+  <!-- <div id="start-screen">
     <button onclick="startLogin()">Login</button>
-  </div>
+  </div> -->
 
   <!-- Login Form -->
   <div id="login-container">
