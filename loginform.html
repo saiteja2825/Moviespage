@@ -10,28 +10,18 @@
   }
 
   body {
-    font-family: Arial, sans-serif;
+    font-family:  Helvetica, sans-serif;
     color: white;
     overflow: hidden;
     background: url('watchingmovieimg.jpg') no-repeat center center fixed;
     background-size: cover;
   }
 
-  #start-screen {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-  }
-
- 
-
   #login-container {
-    display: none;
+    display: flex;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -41,24 +31,24 @@
     justify-content: center;
   }
 
-  @keyframes spin{
-    0%{
-      left
-    }
-  }
-
   .login-box {
     background: rgba(0, 0, 0, 0.7);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 0 cyan;
-    animation: fadeIn 1s ease forwards;
-    opacity: 0;
-  }
+   animation: loginbox_animation 1s ease-out forwards;
+  transform: translateY(200px);
+  opacity: 0;
+  
+  
+}
 
-  @keyframes fadeIn {
-    to { opacity: 1; }
+@keyframes loginbox_animation {
+  to {
+    transform: translateY(0px);
+    opacity: 0.8;
   }
+}
 
   .login-box h2 {
     margin-bottom: 20px;
@@ -84,20 +74,21 @@
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    
   }
 
   .login-box button:hover {
-    background: #00eaff;
+    background: linear-gradient(to right, #833ab4, #fd1d1d);
   }
-</style>
 
+  
+ 
+</style>
 </head>
 <body>
 
-  <!-- Start Button -->
-  <!-- <div id="start-screen">
-    <button onclick="startLogin()">Login</button>
-  </div> -->
+  <!-- Button on Main Page -->
+  <button id="main-action-btn">Click Me</button>
 
   <!-- Login Form -->
   <div id="login-container">
@@ -110,22 +101,30 @@
   </div>
 
   <script>
-    function startLogin() {
-      document.getElementById("start-screen").style.display = "none";
-      document.getElementById("login-container").style.display = "flex";
-    }
-
     function login() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
       if (email === "saitejadevarakonda28@gmail.com" && password === "Teja87878@") {
         alert("Login successful!");
+        localStorage.setItem("loggedIn", "true");
         window.location.href = "index.html";
       } else {
         alert("Invalid credentials");
       }
     }
+
+    function isUserLoggedIn() {
+      return localStorage.getItem("loggedIn") === "true";
+    }
+
+    document.getElementById("main-action-btn").addEventListener("click", function() {
+      if (!isUserLoggedIn()) {
+        window.location.href = "login.html";
+      } else {
+        alert("Executing button function!");
+      }
+    });
   </script>
 
 </body>
