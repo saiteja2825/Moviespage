@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Kumbh Sans', sans-serif;
   scroll-behavior: smooth;
+  
 }
 
 .navbar {
@@ -517,15 +518,108 @@
   font-size: 2.5rem;
 }
 
+.movie-cards-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  background-color: black;
+}
+
+/* Scrollbar track */
+.movie-cards-wrapper::-webkit-scrollbar {
+  height: 8px;
+  display: none;
+}
+
+/* Scrollbar thumb */
+.movie-cards-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* On hover */
+.movie-cards-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.movie-section {
+ background-color: black;
+}
+
+.section-heading{
+  color: white;
+}
+
+
+.movie-cards{
+  margin: 15px 0 0 0;
+   height: 200px;
+  width: 300px;
+  border-radius: 4px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in;
+}
+
+.movie-cards:nth-child(1) {
+  background-image: url('pushpasaree.jpg'); /* Replace with actual movie image */
+}
+
+.movie-cards:nth-child(2) {
+  background-image: url('msdhonipic.jpg'); /* Replace with actual movie image */
+}
+
+.movie-cards:nth-child(3) {
+  background-image: url('aakasamneehaddhu.jpg'); /* Replace with actual movie image */
+}
+.movie-cards:nth-child(4) {
+  background-image: url('lordoftherings.jpg'); /* Replace with actual movie image */
+}
+
+.movie-cards:nth-child(5) {
+  background-image: url('lordoftherings.jpg'); /* Replace with actual movie image */
+}
+
+.movie-cards:nth-child(6) {
+  background-image: url('lordoftherings.jpg'); /* Replace with actual movie image */
+}
+.movie-cards:nth-child(7) {
+  background-image: url('lordoftherings.jpg'); /* Replace with actual movie image */
+}
+.movie-cards:nth-child(8) {
+  background-image: url('lordoftherings.jpg'); /* Replace with actual movie image */
+}
+.movie-cards:nth-child(9) {
+  background-image: url('lordoftherings.jpg'); /* Replace with actual movie image */
+}
+
+.movie-cards:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+
+
+
+
+
 .services__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
 
+
 .services__card {
   margin: 10px;
-  height: 425px;
+  height: 200px;
   width: 300px;
   border-radius: 4px;
   display: flex;
@@ -539,6 +633,7 @@
 
 .services__card:nth-child(1) {
   background-image: url('pushpasaree.jpg'); /* Replace with actual movie image */
+ 
 }
 
 .services__card:nth-child(2) {
@@ -740,6 +835,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+  
 }
 
 .movie-background {
@@ -751,6 +847,7 @@
     display: flex;
     animation: scrollMovies 30s linear infinite;
     z-index: -1;
+    
 }
 
 .movie-background img {
@@ -841,3 +938,4 @@ Optional Overlay
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
+
